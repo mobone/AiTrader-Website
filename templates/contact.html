@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row marketing">
+<div class="col-lg-10" style="position: relative; margin-left: 10%; margin-right: 10%;">
+<h3>Contact</h3>
+{% if success %}
+    <p>Thank you for your message. We'll get back to you shortly.</p>
+{% else %}
+{% for message in form.name.errors %}
+  <div class="flash">{{ message }}</div>
+{% endfor %}
+
+{% for message in form.email.errors %}
+  <div class="flash">{{ message }}</div>
+{% endfor %}
+
+{% for message in form.subject.errors %}
+  <div class="flash">{{ message }}</div>
+{% endfor %}
+
+{% for message in form.message.errors %}
+  <div class="flash">{{ message }}</div>
+{% endfor %}
+
+<form action="{{ url_for('contact') }}" method=post>
+  {{ form.hidden_tag() }}
+
+  {{ form.name.label }}
+  {{ form.name }}
+  <br>
+  {{ form.email.label }}
+  {{ form.email }}
+  <br>
+  {{ form.subject.label }}
+  {{ form.subject }}
+  <br>
+  {{ form.message.label }}
+  {{ form.message }}
+  <br>
+  {{ form.submit }}
+</form>
+{% endif %}
+</div>
+</div>
+
+{% endblock %}

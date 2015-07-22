@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row marketing">
+
+  <div class="col-lg-10" style="position: relative; margin-left: 10%; margin-right: 10%;">
+<h3>About</h3>
+
+    <p>This website was created primarily to showcase my interest in finance, machine learning and web development. </P>
+      <p>In finance there is a phenomenon called post earnings announcement drift.
+        In this phenomenon stock prices drift in either a negative or positive direction respective to each companies cummulative abnormal returns.
+        This is a well documented and proven theory that is both economically and statistically viable.
+        This drift can occur for days or even months after the announcement. In the model a 10 day holding period is used. An example of this drift tendency is shown below. </p>
+      <center><img src='http://www.investingwithoptions.com/wp-content/uploads/open_pead.png'></center>
+      <P>In machine learning we train a computer generated model using known information about price movements, and then ask the model to predict price movements given new information.
+
+        I've created a machine learning algorithm that has successfully classified companies and their price movements based
+         on previous and current earnings announcements, amongst other relavent funamental information. This model has shown considerable outperformance in the market over the last three years and is likely to continue.</p>
+
+      <P> See the dashboard to see performance, or sign up to be alerted when a new positve prediction is made.  </p>
+
+</div>
+</div>
+{% endblock %}

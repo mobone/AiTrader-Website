@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row marketing">
+<div class="col-lg-10" style="position: relative; margin-left: 10%; margin-right: 10%;">
+<h3>Join</h3>
+{% if success %}
+    <p>Thank you for joining, no confirmation email is necessary. We will notify you when a new pick is made!</p>
+{% else %}
+{% for message in form.name.errors %}
+  <div class="flash">{{ message }}</div>
+{% endfor %}
+
+{% for message in form.email.errors %}
+  <div class="flash">{{ message }}</div>
+{% endfor %}
+<p>If you would like to be notified when a pick is made you can sign up below.</P>
+<p>There are usually around 30-60 picks a year. Emails are sent out a half hour before market open and two hours after market close.
+It is still recommended to watch open prices before making any investment decisions.</P>
+<form action="{{ url_for('join') }}" method=post>
+  {{ form.hidden_tag() }}
+
+  {{ form.name.label }}
+  {{ form.name }}
+  <br>
+  {{ form.email.label }}
+  {{ form.email }}
+  <br><br>
+  {{ form.submit }}
+</form>
+{% endif %}
+</div>
+</div>
+
+{% endblock %}

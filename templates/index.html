@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+  <h2><b>Welcome to AiTrader</b></h2>
+  <p class="lead">We present a machine learning algorithm that accurately classifies stocks as outperformers
+   using earnings announcements as inputs</p>
+  <p><a class="btn btn-lg btn-success" href="dashboard/50" role="button">See The Most Recent Trades</a></p>
+</div>
+
+<div class="row marketing">
+<div class="col-lg-6">
+  <h4>What is this?</h4>
+  <p>AiTrader is a website that helps hobby traders idenitify stocks that will outperform the market after earnings announcements.</p>
+
+  <h4>How does it work?</h4>
+  <p>An algorithm based on machine learning identifies inefficiencies in the market and makes predictions about future movements based on passed observations.</p>
+
+</div>
+
+<div class="col-lg-6">
+  <h4>Why does this work?</h4>
+  <p>Earnigns announcements have a tendency to affect stock movements for several days or even months after announcement. This phenomenom is called Post Earnings Announcement Drift and is both statistically and econmically viable. </p>
+
+  <h4>Who is this for?</h4>
+  <p>These predictions are short term and are more suited for hobby traders than large institations, as they would like to hold investments for longer than a year.</p>
+
+
+</div>
+</div>
+
+
+{% endblock %}
