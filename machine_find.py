@@ -124,18 +124,19 @@ if __name__ == '__main__':
         simulate(df.values[0], store_it = True)
     else:
         try:
-            cursor.execute('delete from results')
-            conn.commit()
+            if sys.argv[1]=='delete':
+                cursor.execute('delete from results')
+                conn.commit()
         except:
             pass
 
         combos = []
         #(start_price, price, gamma, epsilon , c, cutoff, cutoff2) = item
-        for gamma in range(70,300,5):
-            for epsilon in range(1,45,5):
-                for c in range(10,40,5):
-                    for cutoff in range(24,34,2):
-                        for cutoff2 in range(40,48,2):
+        for gamma in range(70,220,5):
+            for epsilon in range(15,40,2):
+                for c in range(10,40,2):
+                    for cutoff in range(20,34,2):
+                        for cutoff2 in range(35,48,2):
                             if cutoff2<cutoff: continue
                             combos.append([2, 25, gamma, epsilon/10.0, c/10.0, cutoff/10.0, cutoff2/10.0])
 
